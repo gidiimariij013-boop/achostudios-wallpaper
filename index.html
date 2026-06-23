@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACHOSTUDIOS Wallpapers</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins;
+}
+
+body{
+    background:#0a0a0a;
+    color:white;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#111;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+}
+
+nav input{
+    padding:10px;
+    border-radius:20px;
+    border:none;
+    width:220px;
+    outline:none;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:90px 20px;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{font-size:3rem;}
+.hero p{color:#ccc;margin-top:10px;}
+
+/* SECTION */
+.section{padding:60px 20px;}
+.section h2{margin-bottom:20px;}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#1a1a1a;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.wallpaper{
+    background:#1a1a1a;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.wallpaper img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* BUTTON */
+.download-btn{
+    display:block;
+    text-align:center;
+    padding:10px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111;
+    margin-top:40px;
+}
+
+/* FULLSCREEN VIEW */
+#viewer{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.95);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+#viewer img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+
+#close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:30px;
+    cursor:pointer;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 BACKGROUND MUSIC (replace link if you want) -->
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_2c7b9c0b3b.mp3?filename=relaxing-ambient-114923.mp3" type="audio/mp3">
+</audio>
+
+<nav>
+<div class="logo">ACHOSTUDIOS</div>
+<input id="search" type="text" placeholder="Search wallpapers...">
+</nav>
+
+<header class="hero">
+<h1>Ultra HD Wallpapers</h1>
+<p>Download free premium wallpapers</p>
+</header>
+
+<section class="section">
+<h2>Categories</h2>
+<div class="grid">
+<div class="card">Cars</div>
+<div class="card">Gaming</div>
+<div class="card">Nature</div>
+<div class="card">Space</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Featured Wallpapers</h2>
+
+<div class="gallery">
+
+<!-- 40 WALLPAPERS TOTAL (10 EACH CATEGORY) -->
+
+<!-- CARS -->
+<div class="wallpaper" data-name="ferrari bmw lamborghini car speed luxury"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920">Download</a></div>
+<div class="wallpaper" data-name="bmw sports car night"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1920">Download</a></div>
+<div class="wallpaper" data-name="lamborghini speed luxury"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920">Download</a></div>
+<div class="wallpaper" data-name="audi road car modern"><img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1542362567-b07e54358753?w=1920">Download</a></div>
+<div class="wallpaper" data-name="supercar drift racing"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1920">Download</a></div>
+
+<!-- GAMING -->
+<div class="wallpaper" data-name="gaming pc rgb setup neon"><img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=1920">Download</a></div>
+<div class="wallpaper" data-name="gaming room setup lights"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920">Download</a></div>
+<div class="wallpaper" data-name="esports gaming stage"><img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1542751110-97427bbecf20?w=1920">Download</a></div>
+<div class="wallpaper" data-name="controller neon gaming"><img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=1920">Download</a></div>
+<div class="wallpaper" data-name="keyboard rgb lights"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1920">Download</a></div>
+
+<!-- NATURE -->
+<div class="wallpaper" data-name="mountain lake forest"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1920">Download</a></div>
+<div class="wallpaper" data-name="forest trees green"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920">Download</a></div>
+<div class="wallpaper" data-name="beach ocean sunset"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920">Download</a></div>
+<div class="wallpaper" data-name="desert dunes sand"><img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1920">Download</a></div>
+<div class="wallpaper" data-name="waterfall river nature"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920">Download</a></div>
+
+<!-- SPACE -->
+<div class="wallpaper" data-name="galaxy stars universe"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920">Download</a></div>
+<div class="wallpaper" data-name="earth planet nasa"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920">Download</a></div>
+<div class="wallpaper" data-name="moon night sky"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1920">Download</a></div>
+<div class="wallpaper" data-name="nebula space color"><img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=1920">Download</a></div>
+<div class="wallpaper" data-name="astronaut space suit"><img src="https://images.unsplash.com/photo-1446776811953-2c6e4b6f7a3b?w=800"><a class="download-btn" data-img="https://images.unsplash.com/photo-1446776811953-2c6e4b6f7a3b?w=1920">Download</a></div>
+
+</div>
+</section>
+
+<footer>© 2026 ACHOSTUDIOS Wallpapers</footer>
+
+<!-- FULLSCREEN VIEWER -->
+<div id="viewer">
+<span id="close">×</span>
+<img id="viewerImg">
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // SEARCH
+    const search = document.getElementById("search");
+    const wallpapers = document.querySelectorAll(".wallpaper");
+
+    search.addEventListener("input", function () {
+        const value = search.value.toLowerCase();
+
+        wallpapers.forEach(item => {
+            item.style.display = item.dataset.name.includes(value) ? "block" : "none";
+        });
+    });
+
+    // DOWNLOAD
+    document.querySelectorAll(".download-btn").forEach(btn => {
+        btn.addEventListener("click", async function (e) {
+            e.stopPropagation();
+
+            const imgUrl = this.dataset.img;
+            const res = await fetch(imgUrl);
+            const blob = await res.blob();
+
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "ACHOSTUDIOS-wallpaper.jpg";
+            a.click();
+        });
+    });
+
+    // FULLSCREEN VIEW
+    const viewer = document.getElementById("viewer");
+    const viewerImg = document.getElementById("viewerImg");
+    const close = document.getElementById("close");
+
+    document.querySelectorAll(".wallpaper img").forEach(img => {
+        img.addEventListener("click", () => {
+            viewer.style.display = "flex";
+            viewerImg.src = img.src;
+        });
+    });
+
+    close.addEventListener("click", () => {
+        viewer.style.display = "none";
+    });
+
+});
+</script>
+
+</body>
+</html>
